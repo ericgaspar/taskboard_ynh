@@ -1,0 +1,75 @@
+{
+    "name": "Mantis",
+    "id": "mantis",
+    "packaging_format": 1,
+    "description": {
+        "en": "Bug tracking system based on a web interface.",
+        "fr": "Système de suivi des bugs reposant sur une interface web."
+    },
+    "version": "2.24.3~ynh2",
+    "url": "https://www.mantisbt.org/",
+    "license": "GPL-3.0-only",
+    "maintainer": {
+        "name": "liberodark",
+        "email": "liberodark@gmail.com"
+    },
+    "requirements": {
+        "yunohost": ">= 4.0.0"
+    },
+    "multi_instance": true,
+    "services": [
+        "nginx",
+        "php7.0-fpm",
+        "mysql"
+    ],
+    "arguments": {
+        "install": [{
+                "name": "domain",
+                "type": "domain",
+                "ask": {
+                    "en": "Choose a domain name for Mantis",
+                    "fr": "Choisissez un nom de domaine pour Mantis"
+                },
+                "example": "example.com"
+            },
+            {
+                "name": "path",
+                "type": "path",
+                "ask": {
+                    "en": "Choose a path for Mantis",
+                    "fr": "Choisissez un chemin pour Mantis"
+                },
+                "example": "/mantis",
+                "default": "/mantis"
+            },        
+            {
+                "name": "is_public",
+                "type": "boolean",
+                "ask": {
+                    "en": "Is it a public site?",
+                    "fr": "Est-ce un site public ?"
+                },
+                "default": true
+            },
+            {
+                "name": "admin",
+                "type": "user",
+                "ask": {
+                    "en": "Choose the Mantis administrator",
+                    "fr": "Choisissez l’administrateur de Mantis"
+                },
+                "example": "johndoe"
+            },
+            {
+                "name": "default_access_level",
+                "type": "string",
+                "ask": {
+                    "en": "Choose the default access level for new users",
+                    "fr": "Choisissez le niveau d'accès par défaut pour les nouveaux utilisateurs"
+                },
+                "choices": ["VIEWER", "REPORTER", "UPDATER", "DEVELOPER", "MANAGER"],
+                "default": "REPORTER"
+            }
+        ]
+    }
+}
