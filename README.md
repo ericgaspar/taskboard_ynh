@@ -19,7 +19,7 @@ What TaskBoard does is make it easy to start keeping track of anything you need 
 
 ## Screenshots
 
-![](https://github.com/mantisbt/mantisbt/blob/master/doc/modern_my_view.png)
+![](https://taskboard.matthewross.me/img/boards.043340f1.png)
 
 ## Demo
 

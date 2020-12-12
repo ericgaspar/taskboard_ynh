@@ -3,12 +3,12 @@
     "id": "taskboard",
     "packaging_format": 1,
     "description": {
-        "en": "Bug tracking system based on a web interface.",
-        "fr": "Système de suivi des bugs reposant sur une interface web."
+        "en": "Kanban-inspired app for keeping track of things that need to get done.",
+        "fr": "Application inspirée de Kanban pour garder une trace des choses à faire."
     },
     "version": "1.0.2~ynh1",
-    "url": "https://www.mantisbt.org/",
-    "license": "GPL-3.0-only",
+    "url": "http://taskboard.matthewross.me/",
+    "license": "MIT",
     "maintainer": {
         "name": "",
         "email": ""
