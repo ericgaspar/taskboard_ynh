@@ -20,9 +20,6 @@ domain=$(ynh_app_setting_get --app=$app --key=domain)
 path_url=$(ynh_app_setting_get --app=$app --key=path)
 is_public=$(ynh_app_setting_get --app=$app --key=is_public)
 final_path=$(ynh_app_setting_get --app=$app --key=final_path)
-db_name=$(ynh_app_setting_get --app=$app --key=db_name)
-db_pwd=$(ynh_app_setting_get --app=$app --key=db_pwd)
-db_user=$db_name
 phpversion=$(ynh_app_setting_get --app="$app" --key=phpversion)
 
 #=================================================
@@ -43,12 +40,6 @@ if [ "$is_public" = "Yes" ]; then
 elif [ "$is_public" = "No" ]; then
 	ynh_app_setting_set --app=$app --key=is_public --value=0
 	is_public=0
-fi
-
-# If db_name doesn't exist, create it
-if [ -z "$db_name" ]; then
-	db_name=$(ynh_sanitize_dbid --db_name=$app)
-	ynh_app_setting_set --app=$app --key=db_name --value=$db_name
 fi
 
 # If final_path doesn't exist, create it
@@ -79,21 +70,8 @@ if [ "$upgrade_type" == "UPGRADE_APP" ]
 then
 	ynh_script_progression --message="Upgrading source files..." --weight=5
 
-	# Create a temporary directory
-	tmpdir="$(mktemp -d)"
-
-	cp -a "$final_path/config/config_inc.php" "$tmpdir/config_inc.php"
-
-	# Remove the app directory securely
-	ynh_secure_remove --file=$final_path
-
 	# Download, check integrity, uncompress and patch the source from app.src
 	ynh_setup_source --dest_dir=$final_path
-
-	cp -a "$tmpdir/config_inc.php" "$final_path/config/config_inc.php"
-
-	# Remove the tmp directory securely
-	ynh_secure_remove --file="$tmpdir"
 fi
 
 #=================================================
@@ -118,7 +96,7 @@ ynh_system_user_create --username=$app
 ynh_script_progression --message="Upgrading PHP-FPM configuration..." --weight=1
 
 # Create a dedicated PHP-FPM config
-ynh_add_fpm_config --package="$extra_php_dependencies"
+ynh_add_fpm_config
 
 #=================================================
 # SECURE FILES AND DIRECTORIES
@@ -126,7 +104,7 @@ ynh_add_fpm_config --package="$extra_php_dependencies"
 
 # Set permissions to app files
 chown -R $app: $final_path
-chmod -R 755 $final_path
+chmod -R 755 $final_path/api
 
 #=================================================
 # SETUP SSOWAT

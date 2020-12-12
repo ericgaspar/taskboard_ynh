@@ -1,11 +1,11 @@
-# Mantis pour YunoHost
+# TaskBoard pour YunoHost
 
 [![Integration level](https://dash.yunohost.org/integration/mantis.svg)](https://dash.yunohost.org/appci/app/mantis) ![](https://ci-apps.yunohost.org/ci/badges/mantis.status.svg) ![](https://ci-apps.yunohost.org/ci/badges/mantis.maintain.svg)  
-[![Installer Mantis pour YunoHost](https://install-app.yunohost.org/install-with-yunohost.png)](https://install-app.yunohost.org/?app=mantis)
+[![Installer TaskBoard pour YunoHost](https://install-app.yunohost.org/install-with-yunohost.png)](https://install-app.yunohost.org/?app=mantis)
 
 *[Read this readme in english.](./README.md)* 
 
-> *Ce package vous permet d'installer Mantis rapidement et simplement sur un serveur YunoHost.  
+> *Ce package vous permet d'installer TaskBoard rapidement et simplement sur un serveur YunoHost.  
 Si vous n'avez pas YunoHost, consultez [le guide](https://yunohost.org/#/install) pour apprendre comment l'installer.*
 
 ## Vue d'ensemble

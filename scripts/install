@@ -23,7 +23,6 @@ ynh_abort_if_errors
 domain=$YNH_APP_ARG_DOMAIN
 path_url=$YNH_APP_ARG_PATH
 is_public=$YNH_APP_ARG_IS_PUBLIC
-admin=$YNH_APP_ARG_ADMIN
 
 app=$YNH_APP_INSTANCE_NAME
 
@@ -46,17 +45,6 @@ ynh_script_progression --message="Storing installation settings..." --weight=1
 ynh_app_setting_set --app=$app --key=domain --value=$domain
 ynh_app_setting_set --app=$app --key=path --value=$path_url
 ynh_app_setting_set --app=$app --key=is_public --value=$is_public
-ynh_app_setting_set --app=$app --key=admin --value=$admin
-
-#=================================================
-# CREATE A MYSQL DATABASE
-#=================================================
-ynh_script_progression --message="Creating a MySQL database..." --weight=1
-
-db_name=$(ynh_sanitize_dbid --db_name=$app)
-db_user=$db_name
-ynh_app_setting_set --app=$app --key=db_name --value=$db_name
-ynh_mysql_setup_db --db_user=$db_user --db_name=$db_name
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
@@ -91,25 +79,6 @@ ynh_script_progression --message="Configuring PHP-FPM..." --weight=3
 # Create a dedicated PHP-FPM config
 ynh_add_fpm_config #--package="$extra_php_dependencies"
 phpversion=$(ynh_app_setting_get --app="$app" --key=phpversion)
-
-# #=================================================
-# # MODIFY A CONFIG FILE
-# #=================================================
-
-# cp -a ../conf/config_inc.php $final_path/config/config_inc.php
-
-# ynh_replace_string --match_string="__RANDOM__" --replace_string="$(ynh_string_random --length=20)" --target_file="$final_path/config/config_inc.php"
-# ynh_replace_string --match_string="__DB_NAME__" --replace_string="$db_name" --target_file="$final_path/config/config_inc.php"
-# ynh_replace_string --match_string="__DB_USER__" --replace_string="$db_user" --target_file="$final_path/config/config_inc.php"
-# ynh_replace_string --match_string="__DB_PWD__" --replace_string="$db_pwd" --target_file="$final_path/config/config_inc.php"
-# ynh_replace_string --match_string="__DOMAIN__" --replace_string="$domain" --target_file="$final_path/config/config_inc.php"
-# ynh_replace_string --match_string="__DEFAULT_ACCESS_LEVEL__" --replace_string="$default_access_level" --target_file="$final_path/config/config_inc.php"
-
-#=================================================
-# STORE THE CONFIG FILE CHECKSUM
-#=================================================
-
-#ynh_store_file_checksum --file="$final_path/config/config_inc.php"
 
 #=================================================
 # GENERIC FINALIZATION
