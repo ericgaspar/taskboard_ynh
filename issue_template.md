@@ -22,7 +22,7 @@ about: When creating a bug report, please use the following template to provide 
 - Hardware: *VPS bought online / Old laptop or computer / Raspberry Pi at home / Internet Cube with VPN / Other ARM board / ...*
 - YunoHost version: x.x.x
 - I have access to my server: *Through SSH | through the webadmin | direct access via keyboard / screen | ...*
-- Are you in a special context or did you perform some particular tweaking on your YunoHost instance ?: *no / yes*
+- Are you in a special context or did you perform some particular tweaking on your YunoHost instance?: *no / yes*
   - If yes, please explain:
 - Using, or trying to install package version/branch:
 - If upgrading, current package version: *can be found in the admin, or with `yunohost app info $app_id`*
@@ -31,7 +31,7 @@ about: When creating a bug report, please use the following template to provide 
 
 - *If you performed a command from the CLI, the command itself is enough. For example:*
     ```sh
-    sudo yunohost app install mantis
+    sudo yunohost app install taskboard
     ```
 - *If you used the webadmin, please perform the equivalent command from the CLI first.*
 - *If the error occurs in your browser, explain what you did:*

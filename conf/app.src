@@ -1,6 +1,6 @@
-SOURCE_URL=https://sourceforge.net/projects/mantisbt/files/mantis-stable/2.24.3/mantisbt-2.24.3.tar.gz/download
-SOURCE_SUM=97220d47d2b3a30eb70828a9d2c47565799b6b701c34f87be00dc86d747a864d
+SOURCE_URL=https://github.com/kiswa/TaskBoard/releases/download/v1.0.2/TaskBoard_v1.0.2.zip
+SOURCE_SUM=7138c929b0e3b08f0a26d61b526e849ee894a02e9225802a6976997f380fe9ad
 SOURCE_SUM_PRG=sha256sum
-SOURCE_FORMAT=tar.gz
+SOURCE_FORMAT=zip
 SOURCE_IN_SUBDIR=true
 SOURCE_EXTRACT=true

@@ -1,18 +1,21 @@
-# Mantis for YunoHost
+# TaskBoard for YunoHost
 
-[![Integration level](https://dash.yunohost.org/integration/mantis.svg)](https://dash.yunohost.org/appci/app/mantis) ![](https://ci-apps.yunohost.org/ci/badges/mantis.status.svg) ![](https://ci-apps.yunohost.org/ci/badges/mantis.maintain.svg)  
-[![Install Mantis with YunoHost](https://install-app.yunohost.org/install-with-yunohost.png)](https://install-app.yunohost.org/?app=mantis)
+[![Integration level](https://dash.yunohost.org/integration/taskboard.svg)](https://dash.yunohost.org/appci/app/taskboard) ![](https://ci-apps.yunohost.org/ci/badges/taskboard.status.svg) ![](https://ci-apps.yunohost.org/ci/badges/taskboard.maintain.svg)  
+[![Install TaskBoard with YunoHost](https://install-app.yunohost.org/install-with-yunohost.png)](https://install-app.yunohost.org/?app=taskboard)
 
 *[Lire ce readme en français.](./README_fr.md)*
 
-> *This package allows you to install Mantis quickly and simply on a YunoHost server.  
+> *This package allows you to install TaskBoard quickly and simply on a YunoHost server.  
 If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/install) to learn how to install it.*
 
 ## Overview
 
-Mantis Bug Tracker is a free and open source, web-based bug tracking system. The most common use of MantisBT is to track software defects. However, MantisBT is often configured by users to serve as a more generic issue tracking system and project management tool.
+A Kanban-inspired app for keeping track of things that need to get done.
+The goal of TaskBoard is to provide a simple and clean interface to a functional and minimal application for keeping track of tasks. It's not trying to be the next Trello or LeanKit.
 
-**Shipped version:** 2.24.3
+What TaskBoard does is make it easy to start keeping track of anything you need to get done. The visual aspect of a board allows for easy status checks, and can be motivating for users who want to move their tasks to the next column. 
+
+**Shipped version:** 1.0.2
 
 ## Screenshots
 
@@ -20,18 +23,12 @@ Mantis Bug Tracker is a free and open source, web-based bug tracking system. The
 
 ## Demo
 
-* [Official demo](https://mantisbt.org/bugs/my_view_page.php)
-
-#### Where to find SQL user and password
-
-- **DB user:** mantis
-- **DB name:** mantis
-- **Password:** to be found in the config file `/var/www/mantis/config/config_inc.php`
+* [Official demo](https://taskboard.matthewross.me/demo)
 
 ## Documentation
 
- * Official documentation: https://mantisbt.org/documentation.php
- * YunoHost documentation: https://yunohost.org/#/app_mantis
+ * Official documentation: https://taskboard.matthewross.me/docs/quick-start
+ * YunoHost documentation: https://yunohost.org/#/app_taskboard
 
 ## YunoHost specific features
 
@@ -42,8 +39,8 @@ Mantis Bug Tracker is a free and open source, web-based bug tracking system. The
 
 #### Supported architectures
 
-* x86-64 - [![Build Status](https://ci-apps.yunohost.org/ci/logs/mantis%20%28Apps%29.svg)](https://ci-apps.yunohost.org/ci/apps/mantis/)
-* ARMv8-A - [![Build Status](https://ci-apps-arm.yunohost.org/ci/logs/mantis%20%28Apps%29.svg)](https://ci-apps-arm.yunohost.org/ci/apps/mantis/)
+* x86-64 - [![Build Status](https://ci-apps.yunohost.org/ci/logs/taskboard%20%28Apps%29.svg)](https://ci-apps.yunohost.org/ci/apps/mantis/)
+* ARMv8-A - [![Build Status](https://ci-apps-arm.yunohost.org/ci/logs/taskboard%20%28Apps%29.svg)](https://ci-apps-arm.yunohost.org/ci/apps/mantis/)
 
 ## Limitations
 
@@ -55,20 +52,20 @@ Mantis Bug Tracker is a free and open source, web-based bug tracking system. The
 
 ## Links
 
- * Report a bug: https://github.com/YunoHost-Apps/mantis_ynh/issues
- * App website: https://mantisbt.org/
- * Upstream app repository: https://github.com/mantisbt/mantisbt/
+ * Report a bug: https://github.com/YunoHost-Apps/taskboard_ynh/issues
+ * App website: https://taskboard.matthewross.me/
+ * Upstream app repository: https://github.com/kiswa/TaskBoard
  * YunoHost website: https://yunohost.org/
 
 ---
 
 ## Developer info
 
-Please send your pull request to the [testing branch](https://github.com/YunoHost-Apps/mantis_ynh/tree/testing).
+Please send your pull request to the [testing branch](https://github.com/YunoHost-Apps/taskboard_ynh/tree/testing).
 
 To try the testing branch, please proceed like that.
 ```
-sudo yunohost app install https://github.com/YunoHost-Apps/mantis_ynh/tree/testing --debug
+sudo yunohost app install https://github.com/YunoHost-Apps/taskboard_ynh/tree/testing --debug
 or
-sudo yunohost app upgrade mantis -u https://github.com/YunoHost-Apps/mantis_ynh/tree/testing --debug
+sudo yunohost app upgrade taskboard -u https://github.com/YunoHost-Apps/taskboard_ynh/tree/testing --debug
 ```
