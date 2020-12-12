@@ -89,7 +89,7 @@ ynh_system_user_create --username=$app
 ynh_script_progression --message="Configuring PHP-FPM..." --weight=3
 
 # Create a dedicated PHP-FPM config
-ynh_add_fpm_config --package="$extra_php_dependencies"
+ynh_add_fpm_config #--package="$extra_php_dependencies"
 phpversion=$(ynh_app_setting_get --app="$app" --key=phpversion)
 
 # #=================================================
@@ -119,7 +119,7 @@ phpversion=$(ynh_app_setting_get --app="$app" --key=phpversion)
 
 # Set permissions to app files
 chown -R $app: $final_path
-chmod -R 755 $final_path
+chmod -R 755 $final_path/api
 
 #=================================================
 # SETUP SSOWAT

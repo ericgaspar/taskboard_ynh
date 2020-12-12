@@ -6,10 +6,9 @@
 ;; Test complet
 	; Manifest
 		domain="domain.tld"	(DOMAIN)
-		path="/mantis"	    (PATH)
-		admin="john"	    (USER)
+		path="/taskboard"	    (PATH)
+		#admin="john"	    (USER)
 		is_public=1	        (PUBLIC|public=1|private=0)
-		default_access_level="REPORTER"
 	; Checks
 		pkg_linter=1
 		setup_sub_dir=1
