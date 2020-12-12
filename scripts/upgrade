@@ -123,4 +123,5 @@ ynh_systemd_action --service_name=nginx --action=reload
 #=================================================
 # END OF SCRIPT
 #=================================================
+
 ynh_script_progression --message="Upgrade of TaskBoard completed" --last
