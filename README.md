@@ -32,13 +32,13 @@ What TaskBoard does is make it easy to start keeping track of anything you need 
 
 #### Multi-user support
 
-* Are LDAP and HTTP auth supported ? **Yes**
+* Are LDAP and HTTP auth supported ? **No**
 * Can the app be used by multiple users? **Yes**
 
 #### Supported architectures
 
-* x86-64 - [![Build Status](https://ci-apps.yunohost.org/ci/logs/taskboard%20%28Apps%29.svg)](https://ci-apps.yunohost.org/ci/apps/mantis/)
-* ARMv8-A - [![Build Status](https://ci-apps-arm.yunohost.org/ci/logs/taskboard%20%28Apps%29.svg)](https://ci-apps-arm.yunohost.org/ci/apps/mantis/)
+* x86-64 - [![Build Status](https://ci-apps.yunohost.org/ci/logs/taskboard%20%28Apps%29.svg)](https://ci-apps.yunohost.org/ci/apps/taskboard/)
+* ARMv8-A - [![Build Status](https://ci-apps-arm.yunohost.org/ci/logs/taskboard%20%28Apps%29.svg)](https://ci-apps-arm.yunohost.org/ci/apps/taskboard/)
 
 ## Limitations
 
