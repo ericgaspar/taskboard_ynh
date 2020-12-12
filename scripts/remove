@@ -38,6 +38,14 @@ ynh_script_progression --message="Removing TaskBoard main directory..." --weight
 ynh_secure_remove "$final_path"
 
 #=================================================
+# REMOVE DEPENDENCIES
+#=================================================
+ynh_script_progression --message="Removing dependencies..." --weight=2
+
+# Remove metapackage and its dependencies
+ynh_remove_app_dependencies
+
+#=================================================
 # REMOVE NGINX CONFIGURATION
 #=================================================
 ynh_script_progression --message="Removing NGINX web server configuration..." --weight=1
